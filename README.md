@@ -1,6 +1,6 @@
-# 🚀 Next.js E-Commerce Website
+# 🚀 Next.js Website
 
-This is a modern, responsive, and high-performance e-commerce web application built using [Next.js](https://nextjs.org) with the App Router. It features modular code structure, fast page loads, and a clean UI using Tailwind CSS.
+This is a modern, responsive, and high-performance  web application built using [Next.js](https://nextjs.org) with the App Router. It features modular code structure, fast page loads, and a clean UI using Tailwind CSS.
 
 ---
 
