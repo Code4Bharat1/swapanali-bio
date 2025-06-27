@@ -24,3 +24,56 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.gallery-container {
+  padding: 2rem;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.row-three {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.row-two {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.photo-box {
+  flex: 1;
+  min-width: 30%;
+  max-width: 100%;
+  border: 3px solid #00C8FF;
+  box-shadow: 0px 4px 12.6px 8px #00C8FF40;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.photo-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Scrollbar styling for testimonial review box */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}

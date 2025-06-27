@@ -13,24 +13,24 @@ const expertiseData = [
     description: 'Firm believer in blending scientific knowledge with modern tools to enhance learning and spiritual growth.',
   },
   {
-    title: 'Chemistry',
+    title: 'Numerologist',
     image: '/field4.png',
-    description: 'Chemistry enthusiast with a talent for making reactions and equations interesting and relatable.',
+    description: 'Certified Numerologist guiding individuals through the power of numbers and personal vibrations.',
   },
   {
-    title: 'Physics',
+    title: 'Education',
     image: '/field3.png',
-    description: 'Passionate about decoding the universe through motion, energy, and forces.',
+    description: 'Experienced NEET trainer and Biology educator since 1994, passionate about simplifying complex concepts.',
   },
   {
-    title: 'Mathematics',
+    title: 'Passion',
     image: '/field2.png',
-    description: 'Enjoys making numbers, patterns, and logic simple for learners at all levels.',
+    description: 'Deeply passionate about teaching, personal growth, and helping others unlock their true potential.',
   },
   {
-    title: 'Environment',
+    title: 'Graphologist',
     image: '/field1.png',
-    description: 'Dedicated to educating about sustainability, climate change, and eco-awareness.',
+    description: 'Expert in handwriting analysis, offering insights into personality and behavior through Graphology.',
   },
 ];
 
@@ -44,17 +44,18 @@ export default function Field() {
     {expertiseData.map((item, idx) => (
       <div
         key={idx}
-        className="relative w-[458px] h-[233px] bg-blue-50 rounded-[50px] p-6 pt-20 border-2 border-blue-200 mx-auto shadow-md hover:shadow-lg transition"
+        className="relative w-[458px] h-[233px] bg-blue-50 rounded-[50px] p-6 pt-20 border-3 border-[#1D8EFF] mx-auto shadow-md hover:shadow-lg transition"
       >
         {/* Circle Image Overlapping Top */}
         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
           <div className="w-[80px] h-[80px] bg-white rounded-full shadow-md flex items-center justify-center">
-            <Image src={item.image} alt={item.title} width={60} height={60} />
+           <Image src={item.image} alt={item.title} width={161} height={161} />
+
           </div>
         </div>
 
         <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-        <p className="text-gray-700 text-sm">{item.description}</p>
+        <p className="text-gray-700  text-md ">{item.description}</p>
       </div>
     ))}
   </div>
