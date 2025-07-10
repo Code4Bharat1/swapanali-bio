@@ -1,130 +1,121 @@
 'use client';
-import { useState, useEffect } from 'react';
 
-const images = [
-  { src: '/circle1.png', hoverSrc: '/circle2.png', rotate: -130 },
-  { src: '/circle3.png', hoverSrc: '/circle4.png', rotate: -10 },
-  { src: '/circle5.png', hoverSrc: '/circle6.png', rotate: -180 },
-  { src: '/circle7.png', hoverSrc: '/circle8.png', rotate: 190 },
-  { src: '/circle9.png', hoverSrc: '/circle10.png', rotate: 70 },
-  { src: '/circle11.png', hoverSrc: '/circle12.png', rotate: 60 },
+import Image from 'next/image';
+
+const items = [
+  {
+    title: 'Guide',
+    imgSrc: '/guide.png',
+    bg: 'bg-gradient-to-b from-yellow-400 to-yellow-500',
+    hover: 'hover:from-[#175EF7] hover:to-[#175EF7]',
+    side: 'left',
+  },
+  {
+    title: 'Tarot Card Reader',
+    imgSrc: '/tcr.png',
+    bg: 'bg-teal-400',
+    hover: 'hover:bg-teal-600',
+    side: 'right',
+  },
+  {
+    title: 'Numerologist',
+    imgSrc: '/nuro.png',
+    bg: 'bg-gradient-to-r from-red-500 to-orange-400',
+    hover: 'hover:from-orange-500 hover:to-orange-600',
+    side: 'left',
+  },
+  {
+    title: 'Vastu Consultant',
+    imgSrc: '/explore.png',
+    bg: 'bg-gradient-to-r from-cyan-800 to-cyan-600',
+    hover: 'hover:from-cyan-900 hover:to-cyan-700',
+    side: 'right',
+  },
+  {
+    title: 'Reiki Grand Master',
+    imgSrc: '/rmt.png',
+    bg: 'bg-gradient-to-r from-purple-700 to-purple-500',
+    hover: 'hover:from-purple-800 hover:to-purple-600',
+    side: 'left',
+  },
+  {
+    title: 'Spiritual Healer',
+    imgSrc: '/st.png',
+    bg: 'bg-indigo-900',
+    hover: 'hover:bg-indigo-700',
+    side: 'right',
+  },
 ];
 
-const centerImage = { src: '/circle.png' };
-
-export default function ImageGallery() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [scale, setScale] = useState(1);
-  const [dimensions, setDimensions] = useState({
-    isMobile: false,
-    imageWidth: 500,
-    imageHeight: 320,
-    radius: 300,
-    centerImageWidth: 480,
-    centerImageHeight: 240,
-  });
-
-  useEffect(() => {
-    const updateDimensions = () => {
-      const isMobile = window.innerWidth < 768;
-      const imageWidth = isMobile ? 250 : 500;
-      const imageHeight = isMobile ? 210 : 420;
-      const radius = isMobile ? 200 : 400;
-      const centerImageWidth = isMobile ? 240 : 480;
-      const centerImageHeight = isMobile ? 120 : 240;
-
-      const viewportHeight = window.innerHeight;
-      const galleryHeight = radius * 2 + imageHeight * 1.05 + 16;
-      const newScale = Math.min(1, viewportHeight / galleryHeight);
-
-      setDimensions({ isMobile, imageWidth, imageHeight, radius, centerImageWidth, centerImageHeight });
-      setScale(Math.max(newScale, 0.7));
-    };
-
-    updateDimensions();
-    window.addEventListener('resize', updateDimensions);
-    return () => window.removeEventListener('resize', updateDimensions);
-  }, []);
-
-  const { isMobile, imageWidth, imageHeight, radius, centerImageWidth, centerImageHeight } = dimensions;
-
+export default function BeyondAcademics() {
   return (
-    <div className="flex justify-center items-center h-[900px] p-4 bg-gray-100">
-      <div
-        className="relative"
-        style={{
-          width: `${radius * 2 + imageWidth * 1.05}px`,
-          height: `${radius * 2 + imageHeight * 1.05}px`,
-          maxWidth: '100vw',
-          transform: `scale(${scale})`,
-          transformOrigin: 'center',
-        }}
-      >
+    <div className="relative w-full max-w-6xl mx-auto mt-[30px] px-4 bg-white flex flex-col items-center pb-4 ">
+
+      {/* Title Image */}
+      <div className="relative z-10 text-center mb-6 mt-6">
+        <Image
+          src="/academmicsss.png"
+          alt="Beyond Academics"
+          width={250}
+          height={100}
+          className="mx-auto h-auto rounded-md shadow transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+
+      {/* Center Vertical Line */}
+      <div className="absolute top-[140px] bottom-0 left-1/2 transform -translate-x-1/2 w-[2px] bg-black z-0" />
+
+      {/* Alternating Rows */}
+      <div className="flex flex-col gap-sm w-full mt-2">
+        {items.map((item, idx) => (
+  <div key={idx} className="relative flex items-center w-full justify-center px-4">
+    {item.side === 'left' ? (
+      <div className="flex items-center gap-1 z-10   mr-[calc(50%-130px)]">
+        {/* Card */}
         <div
-          className="absolute top-1/2 left-1/2 z-10 cursor-pointer"
-          style={{
-            transform: `translate(-50%, ${isMobile ? 'calc(-50% + 10px)' : 'calc(-50% + 20px)'})`,
-          }}
-          onMouseEnter={() => setHoveredIndex('center')}
-          onMouseLeave={() => setHoveredIndex(null)}
+          className={`${item.bg} ${item.hover} transition-all duration-300 hover:scale-105 w-[220px] h-[110px] rounded-md shadow-md flex flex-col items-center justify-between`}
         >
-          <img
-            src={centerImage.src}
-            alt="Center Image"
-            width={centerImageWidth}
-            height={centerImageHeight}
-            role="img"
-            aria-label="Center Image"
-            className="object-cover"
-            onError={(e) => {
-              console.warn(`Failed to load center image: ${centerImage.src}`);
-              e.target.style.display = 'none';
-            }}
-          />
+          <div className="w-full flex justify-center pt-4">
+            <Image
+              src={item.imgSrc}
+              alt={item.title}
+              width={50}
+              height={50}
+              className="object-contain"
+            />
+          </div>
+          <span className="text-white font-semibold text-center px-4 pb-6">
+            {item.title}
+          </span>
         </div>
-
-        {images.map((image, index) => {
-          const angle = (index / images.length) * 360;
-          const radian = (angle * Math.PI) / 180;
-          const x = (radius * Math.cos(radian)).toFixed(2);
-          const y = (radius * Math.sin(radian)).toFixed(2);
-
-          return (
-            <div
-              key={index}
-              className="absolute z-0 cursor-pointer"
-              style={{
-                transform: `translate(${x}px, ${y}px)`,
-                top: '50%',
-                left: '50%',
-                marginLeft: `${-imageWidth / 2}px`,
-                marginTop: `${-imageHeight / 2}px`,
-                overflow: 'hidden',
-              }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <img
-                src={hoveredIndex === index ? image.hoverSrc : image.src}
-                alt={`Gallery Image ${index + 1}`}
-                width={imageWidth}
-                height={imageHeight}
-                role="img"
-                aria-label={`Gallery Image ${index + 1}`}
-                className="object-cover transition-all duration-300"
-                style={{
-                  transform: `rotate(${image.rotate}deg) ${
-                    hoveredIndex === index && !isMobile ? 'scale(1.05)' : 'scale(1)'
-                  }`,
-                }}
-                onError={(e) => {
-                  console.warn(`Failed to load image: ${hoveredIndex === index ? image.hoverSrc : image.src}`);
-                  e.target.src = '/placeholder.png';
-                }}
-              />
-            </div>
-          );
-        })}
+        {/* Horizontal Line */}
+        <div className="h-[2px] w-48 bg-black" />
+      </div>
+    ) : (
+      <div className="flex items-center gap-1 z-10 ml-[calc(50%-130px)]">
+        {/* Horizontal Line */}
+        <div className="h-[2px] w-48 bg-black" />
+        {/* Card */}
+        <div
+          className={`${item.bg} ${item.hover} transition-all duration-300 hover:scale-105 w-[220px] h-[110px] rounded-md shadow-md flex flex-col items-center justify-between`}
+        >
+          <div className="w-full flex justify-center pt-4">
+            <Image
+              src={item.imgSrc}
+              alt={item.title}
+              width={50}
+              height={50}
+              className="object-contain"
+            />
+          </div>
+          <span className="text-white font-semibold text-center px-4 pb-6">
+            {item.title}
+          </span>
+        </div>
+      </div>
+    )}
+  </div>
+))}
       </div>
     </div>
   );

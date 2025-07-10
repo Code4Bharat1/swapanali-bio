@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full h-[550px] overflow-hidden">
+    <div className="relative w-full h-[400px] overflow-hidden mt-[77px]">
       {/* Background Image */}
       <Image
         src="/media.png" // Replace with your image path

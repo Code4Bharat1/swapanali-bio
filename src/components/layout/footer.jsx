@@ -1,8 +1,10 @@
 'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaYoutube, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
@@ -16,9 +18,9 @@ export default function Footer() {
             alt="Logo"
             width={420}
             height={420}
-            className="w-[180px] sm:w-[220px] h-auto"
+            className="w-[280px] sm:w-[280px] h-auto"
           />
-          <div className="flex space-x-4 text-xl text-gray-700">
+          <div className="flex space-x-4 text-3xl text-gray-700 ml-17">
             <a href="#"><FaYoutube className="text-red-600" /></a>
             <a href="#"><FaLinkedin className="text-blue-700" /></a>
             <a href="#"><FaFacebook className="text-blue-600" /></a>
@@ -29,9 +31,19 @@ export default function Footer() {
         {/* Get In Touch */}
         <div className="flex flex-col gap-2">
           <h3 className="font-semibold text-lg mb-2">Get In Touch</h3>
-          <p className="flex items-center gap-2 text-sm md:text-base">
+
+          {/* Animate only this email line */}
+          <motion.p
+            className="flex items-center gap-2 text-sm md:text-base"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <MdEmail className="text-lg" /> biologywithswapnali@gmail.com
-          </p>
+          </motion.p>
+
+          {/* Phone stays static */}
           <p className="flex items-center gap-2 text-sm md:text-base">
             <MdPhone className="text-lg" /> +91 9820268079
           </p>

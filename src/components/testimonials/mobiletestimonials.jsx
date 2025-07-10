@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Testimonials() {
   return (
-    <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden flex items-center justify-center mt-[77px]">
+    <div className="relative w-full h-[300px] md:h-[550px] overflow-hidden flex items-center justify-center">
       {/* Background Image */}
       <Image
         src="/test.png" // Replace with your image path
@@ -17,7 +17,7 @@ export default function Testimonials() {
       <div className="absolute inset-0 bg- bg-opacity-50 z-10" />
 
       {/* Centered Text */}
-      <h1 className="relative z-20 text-white text-3xl md:text-[80px] font-bold text-center">
+      <h1 className="relative z-20 text-white text-3xl md:text-[90px] font-bold text-center">
         TESTIMONIALS
       </h1>
     </div>
