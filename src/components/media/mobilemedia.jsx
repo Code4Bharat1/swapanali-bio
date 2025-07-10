@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function HeroSectionMobile() {
   return (
-    <div className="relative w-full h-[350px] overflow-hidden md:hidden">
+    <div className="relative w-full h-[250px] overflow-hidden md:hidden mt-[77px]">
       {/* Background Image */}
       <Image
         src="/media.png"

@@ -11,7 +11,7 @@ export default function HomepageMobile() {
   }, []);
 
   return (
-    <div className="block md:hidden bg-cover bg-center text-white px-4 pt-30 pb-8" style={{ backgroundImage: "url('/home2.png')" }}>
+    <div className="block md:hidden bg-cover bg-center text-white px-4 pt-1 pb-2 mt-[77px]" style={{ backgroundImage: "url('/home2.png')" }}>
       {/* Text Section */}
       <div className="text-left space-y-4">
         <motion.h1 

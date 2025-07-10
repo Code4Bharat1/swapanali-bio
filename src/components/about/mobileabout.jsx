@@ -54,7 +54,7 @@ export default function AboutMobile() {
   return (
     <>
       {/* Top Section */}
-      <section className="relative w-full h-[300px] flex items-center justify-center text-white">
+      <section className="relative w-full h-[250px] flex items-center justify-center text-white mt-[77px]">
         <Image
           src="/about.png"
           alt="About Background"

@@ -29,7 +29,7 @@ export default function ContactMobile() {
   return (
     <>
       {/* Hero Section - Mobile Optimized */}
-      <div className="relative w-full h-[350px] sm:h-[400px] overflow-hidden flex items-center justify-center">
+      <div className="relative w-full h-[250px] sm:h-[400px] overflow-hidden flex items-center justify-center mt-[77px]">
         <Image
           src="/contact.png"
           alt="Background"
