@@ -52,11 +52,12 @@ export default function Footer() {
         {/* Get To Know */}
         <div className="flex flex-col gap-1 text-sm md:text-base">
           <h3 className="font-semibold text-lg mb-2">Get To Know</h3>
-          <Link href="#" className="hover:underline">HOME</Link>
-          <Link href="#" className="hover:underline">ABOUT ME</Link>
-          <Link href="#" className="hover:underline">MEDIA</Link>
-          <Link href="#" className="hover:underline">GET IN TOUCH</Link>
-          <Link href="#" className="hover:underline">TESTIMONIALS</Link>
+          <Link href="/" className="hover:underline">HOME</Link>
+<Link href="/about" className="hover:underline">ABOUT ME</Link>
+<Link href="/media" className="hover:underline">MEDIA</Link>
+<Link href="/contact" className="hover:underline">GET IN TOUCH</Link>
+<Link href="/testimonial" className="hover:underline">TESTIMONIALS</Link>
+
         </div>
 
         {/* Illustration */}

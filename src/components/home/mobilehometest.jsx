@@ -122,7 +122,7 @@ export default function TestMobile() {
         viewport={{ once: true }}
       >
         <Image
-          src="/rate.png"
+          src="/starrating.png"
           alt="Rating"
           width={110}
           height={20}

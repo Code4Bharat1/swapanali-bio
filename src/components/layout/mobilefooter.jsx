@@ -26,11 +26,12 @@ export default function FooterMobile() {
   <div className="flex flex-col items-center">
     <h3 className="font-semibold text-black mb-2">Get To Know</h3>
     <ul className="space-y-1">
-      <li><Link href="#">HOME</Link></li>
-      <li><Link href="#">ABOUT ME</Link></li>
-      <li><Link href="#">MEDIA</Link></li>
-      <li><Link href="#">GET IN TOUCH</Link></li>
-      <li><Link href="#">TESTIMONIALS</Link></li>
+      <li><Link href="/" className="hover:underline">HOME</Link></li>
+      <li><Link href="/about" className="hover:underline">ABOUT ME</Link></li>
+      <li><Link href="/media" className="hover:underline">MEDIA</Link></li>
+      <li><Link href="/contact" className="hover:underline">GET IN TOUCH</Link>
+</li>
+      <li><Link href="/testimonial" className="hover:underline">TESTIMONIALS</Link></li>
     </ul>
   </div>
 

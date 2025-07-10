@@ -110,7 +110,8 @@ export default function TestMobile() {
                   <h3 className="font-bold text-gray-800 text-base mb-2">{t.name}</h3>
                   <div className="flex justify-center mb-3">
                     <img
-                      src="/rate.png"
+                      src="/starrating
+                      .png"
                       alt="Rating"
                       className="w-[100px] h-[32px] object-contain"
                     />

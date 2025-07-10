@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Overlapping Text */}
      <div className="absolute inset-0 flex items-center justify-center z-10">
   <img
-    src="/mediatext.png" // 🔁 Replace with your image
+    src="/mediatext1.png" // 🔁 Replace with your image
     alt="Overlapping"
     className="absolute w-[250px] h-[120px] object-fit  z-0"
   />

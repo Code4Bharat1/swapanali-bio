@@ -135,7 +135,7 @@ export default function Test() {
                       </h3>
                       <div className="flex justify-center mb-4">
                         <img
-                          src="/rate.png"
+                          src="/starrating.png"
                           alt="Rating"
                           className="w-[145px] h-[48px] object-contain group-hover:scale-105 transition-transform duration-300"
                         />

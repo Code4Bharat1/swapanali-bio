@@ -16,7 +16,7 @@ export default function HeroSectionMobile() {
       {/* Overlapping Text */}
       <div className="absolute inset-0 flex items-center justify-center">
         <img
-          src="/mediatext.png"
+          src="/mediatext1.png"
           alt="Overlapping"
           className="w-[180px] h-[80px] object-contain"
         />
