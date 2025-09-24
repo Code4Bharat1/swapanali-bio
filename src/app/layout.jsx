@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${inter.className} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.className} ${geistSans.variable} ${geistMono.variable} antialiased overflow-x-clip`}>
         {children}
       </body>
     </html>

@@ -3,97 +3,75 @@ import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
 
+
 // ProfileCard Component
 function ProfileCard() {
   return (
     <div
-  className="relative w-full h-[470px]"
-  style={{
-    background: 'linear-gradient(180deg, #58AAFF 0%, #007DFF 100%)',
-    borderTop: '5px solid #FFEA00',      // ✅ Added
-    borderLeft: '5px solid #FFEA00',
-    borderRight: '5px solid #FFEA00',
-    borderBottom: '5px solid #FFEA00',
-  }}
->
-      {/* White Box */}
+      className="relative w-full h-auto flex items-center justify-center gap-12 px-12 py-12"
+      style={{
+        background: 'linear-gradient(180deg, #58AAFF 0%, #007DFF 100%)',
+        border: '5px solid #FFEA00',
+      }}
+    >
+      {/* Left Card */}
       <motion.div
         initial={{ x: -150, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         viewport={{ once: true }}
-        className="absolute left-30 w-[400px] max-w-[40%] h-[370px] bg-white"
+        className="relative w-[400px] h-[370px] bg-white"
         style={{
-          top: '9%',
           borderTopLeftRadius: '80px',
           borderTopRightRadius: '80px',
           boxShadow: '9px -8px 4px 0px #00000040, 0px 4px 4px 0px #00000040',
         }}
       >
-        {/* Image with Animation from Left */}
+        {/* Image */}
         <motion.div
-  initial={{ x: -150, opacity: 0 }}
-  whileInView={{ x: 0, opacity: 1 }}
-  transition={{ duration: 0.8, ease: 'easeOut' }}
-  viewport={{ once: true }}
-  className="h-[370px] w-full flex justify-center items-start"
->
-  <img
-    src="/about1.png"
-    alt="Profile"
-    style={{
-      width: '290px',
-      height: '370px',
-      objectFit: 'fill',
-      marginTop: '-60px', // if you still want a slight lift effect
-    }}
-  />
-</motion.div>
-
+          initial={{ x: -150, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true }}
+          className="h-[370px] w-full flex justify-center items-start"
+        >
+          <img
+            src="/about1.png"
+            alt="Profile"
+            style={{
+              width: '290px',
+              height: '370px',
+              objectFit: 'fill',
+              marginTop: '-60px',
+            }}
+          />
+        </motion.div>
 
         {/* Name */}
-        <h2
-          className="absolute text-black text-center"
-          style={{
-            bottom: '15px',
-            left: '10%',
-            right: '10%',
-            fontFamily: 'Inter',
-            fontWeight: 600,
-            fontSize: '2rem',
-            lineHeight: '1.4',
-            textTransform: 'capitalize',
-          }}
-        >
+        <h2 className="absolute bottom-4 left-1/2 -translate-x-1/2 text-black font-semibold text-2xl text-center">
           Swapnali Patkar
         </h2>
       </motion.div>
 
-      {/* Description Text with Animation from Right */}
+      {/* Right Text */}
       <motion.p
-  className="absolute text-black"
-  style={{
-    width: '814px',
-    top: '60px',
-    left: '720px',
-    fontFamily: 'Inter, sans-serif',
-    fontWeight: 350,
-    fontSize: '27px',          // ✅ Match this with "Currently teaching..." section
-    lineHeight: '1.6',
-    textTransform: 'capitalize',
-  }}
->
-
-  I am a passionate teacher by heart and profession, shaping young minds
-  since 1994. With a Master's degree in Microbiology, along with B.Ed and
-  DMLT qualifications, I began my journey as a tuition teacher, guiding
-  school students with dedication and care. Over the years, I have evolved
-  into a highly experienced Biology teacher and NEET trainer.
-</motion.p>
-
+        initial={{ x: 150, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true }}
+        className="text-black max-w-3xl text-3xl leading-relaxed"
+        style={{ fontFamily: 'Inter, sans-serif' }}
+      >
+        I am a passionate teacher by heart and profession, shaping young minds
+        since 1994. With a Master's degree in Microbiology, along with B.Ed and
+        DMLT qualifications, I began my journey as a tuition teacher, guiding
+        school students with dedication and care. Over the years, I have evolved
+        into a highly experienced Biology teacher and NEET trainer.
+      </motion.p>
     </div>
   );
 }
+
 // About Section
 export default function About() {
   return (

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const items = [
   {
-    title: 'Guide',
+    title:'Graphologist',
     imgSrc: '/guide.png',
     bg: 'bg-gradient-to-b from-yellow-400 to-yellow-500',
     hover: 'hover:from-[#175EF7] hover:to-[#175EF7]',
